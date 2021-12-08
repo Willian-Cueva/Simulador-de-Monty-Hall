@@ -29,24 +29,27 @@
                 <img src="./assets/imagenes/puerta2.png" class="card-img-top puerta" alt="puerta" id="img1">
                 <div class="card-body">
                   <p class="card-text" id="prr1">Puerta Cerrada</p>
-                  <a class="btn btn-primary" id="btn1" onclick="jugar('img1','prr1','btn1')">Abrir Puerta</a>
+                  <a class="btn btn-primary" id="btn1" onclick="jugar(datosInf,'img1','prr1','btn1')">Abrir Puerta</a>
                 </div>
               </div></div>
             <div class="col-6 col-sm-6 col-md-4 col-lg-4"><div class="card tarjeta">
                 <img src="./assets/imagenes/puerta2.png" class="card-img-top puerta" alt="puerta" id="img2">
                 <div class="card-body">
                   <p class="card-text" id="prr2">Puerta Cerrada</p>
-                  <a class="btn btn-primary" id="btn2" onclick="jugar('img2','prr2','btn2')">Abrir Puerta</a>
+                  <a class="btn btn-primary" id="btn2" onclick="jugar(datosInf,'img2','prr2','btn2')">Abrir Puerta</a>
                 </div>
               </div></div>
             <div class="col-6 col-md-4 col-lg-4"><div class="card tarjeta">
                 <img src="./assets/imagenes/puerta2.png" class="card-img-top puerta" alt="puerta" id="img3">
                 <div class="card-body">
                   <p class="card-text" id="prr3">Puerta Cerrada</p>
-                  <a class="btn btn-primary" id="btn3" onclick="jugar('img3','prr3','btn3')">Abrir Puerta</a>
+                  <a class="btn btn-primary" id="btn3" onclick="jugar(datosInf,'img3','prr3','btn3')">Abrir Puerta</a>
                 </div>
               </div></div>
         </div>
+        <div id="alert" class="alert alert-primary" role="alert">
+            <p id="coment" class="comentario"></p>
+          </div>
         <div class="titulo">
             <h2>Datos</h2>
         </div>
@@ -61,24 +64,24 @@
                 <div class="col-12 col-md-3">
                     <div class="datos">
                         <h3>Ganados: </h3>
-                        <p id="nroI">0</p>
+                        <p id="nroG">0</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-3">
                     <div class="datos">
                         <h3>Perdidos: </h3>
-                        <p id="nroI" style="color: red;">0</p>
+                        <p id="nroP" style="color: red;">0</p>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="datos">
                         <h3>Probalilidad de Éxito: </h3>
-                        <p id="nroI">0%</p>
+                        <p id="proba">0%</p>
                     </div>
                 </div>
-                <div class="col-12">
-                    <button type="button" class="btn btn-primary" onclick="resetearJuego()">Resetear Juego</button>
-                </div>
+                <!-- <div class="col-12">
+                    <button type="button" class="btn btn-primary" onclick="resetearJuego(datosInf)">Resetear Juego</button>
+                </div> -->
             </div>
         </div>
     </div>
