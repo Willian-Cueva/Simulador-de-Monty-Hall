@@ -18,7 +18,7 @@ const imagenes = [
   "../assets/imagenes/puerta-cabra.png",
   "../assets/imagenes/puerta-carro.png",
 ];
-const PuertaUno = new Puerta(
+let PuertaUno = new Puerta(
   imagenes[0],
   "Cabra",
   "excluido",
@@ -26,7 +26,7 @@ const PuertaUno = new Puerta(
   "prr1",
   "btn1"
 );
-const PuertaDos = new Puerta(
+let PuertaDos = new Puerta(
   imagenes[0],
   "Cabra",
   "excluido",
@@ -34,7 +34,7 @@ const PuertaDos = new Puerta(
   "prr2",
   "btn2"
 );
-const PuertaTres = new Puerta(
+let PuertaTres = new Puerta(
   imagenes[0],
   "Cabra",
   "excluido",
