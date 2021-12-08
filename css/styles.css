@@ -1,3 +1,7 @@
+body{
+    /* background-color: #6c757d; */
+}
+
 .titulo{
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -9,9 +13,47 @@
 }
 
 .container{
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
 }
 
 .row{
+
+}
+
+.card{
+    margin-bottom: .5rem;
+}
+
+.datos{
+    display: flex;
+    height: 32px;
+    margin: 0;
+}
+
+.datos h3{
     
+}
+
+.datos p{
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1rem;
+    color: rgb(157, 230, 48);
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.info{
+    padding: 1rem;
+}
+
+.puerta{
+    max-height: 320px;
+    max-width: 193px;
+}
+
+.tarjeta{
+    width: 100%;
+    align-items: center;
 }
