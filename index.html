@@ -1,95 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/styles.css" type="text/css">
-    <link rel="shortcut icon" href="./assets/imagenes/unl.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/styles.css" type="text/css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/imagenes/unl.png"
+      type="image/x-icon"
+    />
     <script src="./js/app.js" type="text/javaScript"></script>
     <title>Simulador Monty Hall</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="./assets/imagenes/unl.png" alt="" width="30px" class="d-inline-block align-text-top">
-            Willian Cueva
-          </a>
-        </div>
-      </nav>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="./assets/imagenes/unl.png"
+            alt=""
+            width="30px"
+            class="d-inline-block align-text-top"
+          />
+          Willian Cueva
+        </a>
+      </div>
+    </nav>
 
     <div class="container">
-        <div class="titulo">
-            <h1>Simulador de Monty Hall</h1>
-        </div>
-        <div class="row">
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4"><div class="card tarjeta">
-                <img src="assets/imagenes/puerta2.png" class="card-img-top puerta" alt="puerta" id="img1">
-                <div class="card-body">
-                  <p class="card-text" id="prr1">Puerta Cerrada</p>
-                  <a class="btn btn-primary" id="btn1" onclick="jugar(datosInf,'img1','prr1','btn1')">Abrir Puerta</a>
-                </div>
-              </div></div>
-            <div class="col-6 col-sm-6 col-md-4 col-lg-4"><div class="card tarjeta">
-                <img src="assets/imagenes/puerta2.png" class="card-img-top puerta" alt="puerta" id="img2">
-                <div class="card-body">
-                  <p class="card-text" id="prr2">Puerta Cerrada</p>
-                  <a class="btn btn-primary" id="btn2" onclick="jugar(datosInf,'img2','prr2','btn2')">Abrir Puerta</a>
-                </div>
-              </div></div>
-            <div class="col-6 col-md-4 col-lg-4"><div class="card tarjeta">
-                <img src="assets/imagenes/puerta2.png" class="card-img-top puerta" alt="puerta" id="img3">
-                <div class="card-body">
-                  <p class="card-text" id="prr3">Puerta Cerrada</p>
-                  <a class="btn btn-primary" id="btn3" onclick="jugar(datosInf,'img3','prr3','btn3')">Abrir Puerta</a>
-                </div>
-              </div></div>
-        </div>
-        <div id="alert" class="alert alert-primary" role="alert">
-            <p id="coment" class="comentario"></p>
+      <div class="titulo">
+        <h1>Simulador de Monty Hall</h1>
+      </div>
+      <div id="alert" class="alert alert-primary" role="alert">
+        <p id="coment" class="comentario"></p>
+      </div>
+      <div class="row">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-4">
+          <div class="card tarjeta">
+            <img
+              src="assets/imagenes/puerta2.png"
+              class="card-img-top puerta"
+              alt="puerta"
+              id="img1"
+            />
+            <div class="card-body">
+              <p class="card-text" id="prr1">Puerta Cerrada</p>
+              <a
+                class="btn btn-primary"
+                id="btn1"
+                onclick="jugar(datosInf,'img1','prr1','btn1')"
+                >Abrir Puerta</a
+              >
+            </div>
           </div>
-        <div class="titulo">
-            <h2>Datos</h2>
         </div>
-        <div class="card info">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="datos">
-                        <h3>Número de Intentos: </h3>
-                        <p id="nroI">0</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3">
-                    <div class="datos">
-                        <h3>Ganados: </h3>
-                        <p id="nroG">0</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3">
-                    <div class="datos">
-                        <h3>Perdidos: </h3>
-                        <p id="nroP" style="color: red;">0</p>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="datos">
-                        <h3>Probalilidad de Éxito: </h3>
-                        <p id="proba">0%</p>
-                    </div>
-                </div>
-                <!-- <div class="col-12">
+        <div class="col-6 col-sm-6 col-md-4 col-lg-4">
+          <div class="card tarjeta">
+            <img
+              src="assets/imagenes/puerta2.png"
+              class="card-img-top puerta"
+              alt="puerta"
+              id="img2"
+            />
+            <div class="card-body">
+              <p class="card-text" id="prr2">Puerta Cerrada</p>
+              <a
+                class="btn btn-primary"
+                id="btn2"
+                onclick="jugar(datosInf,'img2','prr2','btn2')"
+                >Abrir Puerta</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-4">
+          <div class="card tarjeta">
+            <img
+              src="assets/imagenes/puerta2.png"
+              class="card-img-top puerta"
+              alt="puerta"
+              id="img3"
+            />
+            <div class="card-body">
+              <p class="card-text" id="prr3">Puerta Cerrada</p>
+              <a
+                class="btn btn-primary"
+                id="btn3"
+                onclick="jugar(datosInf,'img3','prr3','btn3')"
+                >Abrir Puerta</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="titulo">
+        <h2>Datos</h2>
+      </div>
+      <div class="card info">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="datos">
+              <h3>Número de Intentos:</h3>
+              <p id="nroI">0</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="datos">
+              <h3>Ganados:</h3>
+              <p id="nroG">0</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="datos">
+              <h3>Perdidos:</h3>
+              <p id="nroP" style="color: red">0</p>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="datos">
+              <h3>Probalilidad de Éxito:</h3>
+              <p id="proba">0%</p>
+            </div>
+          </div>
+          <!-- <div class="col-12">
                     <button type="button" class="btn btn-primary" onclick="resetearJuego(datosInf)">Resetear Juego</button>
                 </div> -->
-            </div>
         </div>
+      </div>
     </div>
     <script>
-    
-    let datosInf = iniciarJuego();
-    
+      let datosInf = iniciarJuego();
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
