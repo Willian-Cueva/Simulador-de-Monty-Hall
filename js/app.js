@@ -21,9 +21,9 @@ class Puerta {
 }
 
 const imagenes = [
-  "../assets/imagenes/puerta2.png",
-  "../assets/imagenes/puerta-cabra.png",
-  "../assets/imagenes/puerta-carro.png",
+  "assets/imagenes/puerta2.png",
+  "assets/imagenes/puerta-cabra.png",
+  "assets/imagenes/puerta-carro.png",
 ];
 
 function presentarIntentos(obj, id = "") {
