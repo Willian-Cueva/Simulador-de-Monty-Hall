@@ -1,11 +1,16 @@
 .titulo{
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     text-align: center;
 }
 
 .titulo h1{
     text-decoration: underline;
+}
+
+.comentario{
+    margin: 0;
+    text-align: center;
 }
 
 .card{

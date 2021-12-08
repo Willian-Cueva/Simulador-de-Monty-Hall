@@ -11,7 +11,6 @@ class Puerta {
     this.resultado = res;
   }
 }
-const posibilidades = ["cerrado", "cabra", "carro"];
 
 const imagenes = [
   "../assets/imagenes/puerta2.png",
@@ -83,19 +82,31 @@ function puertasEscojidas() {
   return cont;
 }
 
-function dondeEstaLaCabra(p1, p2, id1, id2) {
+function dondeEstaLaCabra(p1, p2) {
   if (p1.estado == "Cabra") {
+    cambiarImagen(p1.idImg, imagenes[1]);
+    cambiarEstado(p1.idPrr, p1.estado);
+    p1.resultado = "seleccionado";
+    cambiarEstadoBoton(p1.idBtn, "desactivo");
   } else {
+    cambiarImagen(p2.idImg, imagenes[1]);
+    cambiarEstado(p2.idPrr, p2.estado);
+    p2.resultado = "seleccionado";
+    cambiarEstadoBoton(p2.idBtn, "desactivo");
   }
+}
+
+function actualizarComentario(comentario="") {
+    document.getElementById('coment').innerHTML = comentario;
 }
 
 function mostrarCabra(btn) {
   if (btn == "btn1") {
-    dondeEstaLaCabra(PuertaDos, PuertaTres, "btn2", "btn3");
+    dondeEstaLaCabra(PuertaDos, PuertaTres);
   } else if (btn == "btn2") {
-    dondeEstaLaCabra(PuertaUno, PuertaTres, "btn1", "btn3");
+    dondeEstaLaCabra(PuertaUno, PuertaTres);
   } else if (btn == "btn3") {
-    dondeEstaLaCabra(PuertaUno, PuertaDos, "btn1", "btn2");
+    dondeEstaLaCabra(PuertaUno, PuertaDos);
   }
 }
 
@@ -116,8 +127,9 @@ function jugar(img, prr, btn) {
   switch (nroSeleccionados) {
     case 1:
       cambiarEstado(prr, "Escogiste Esta");
-      cambiarEstadoBoton(btn, "desactivo");
+    //   cambiarEstadoBoton(btn, "desactivo");
       mostrarCabra(btn);
+      actualizarComentario("Te quedas con la puerta que elejiste? o decides cambiarla?")
       break;
 
     default:
@@ -147,13 +159,16 @@ function asignarCarro() {
   }
 }
 
-function resetearJuego() {
+function resetearJuego(obj) {
+  obj.comentario = "Escoje Una Puerta!!!";
+  obj.termino = false;
+  actualizarComentario(obj.comentario);
   cambiarImagen("img1", imagenes[0]);
   cambiarImagen("img2", imagenes[0]);
   cambiarImagen("img3", imagenes[0]);
-  cambiarEstado("prr1", "Puesta Cerrada");
-  cambiarEstado("prr2", "Puesta Cerrada");
-  cambiarEstado("prr3", "Puesta Cerrada");
+  cambiarEstado("prr1", "Puerta Cerrada");
+  cambiarEstado("prr2", "Puerta Cerrada");
+  cambiarEstado("prr3", "Puerta Cerrada");
   cambiarEstadoBoton("btn1", "activar");
   cambiarEstadoBoton("btn2", "activar");
   cambiarEstadoBoton("btn3", "activar");
@@ -185,14 +200,17 @@ function resetearJuego() {
 }
 
 function iniciarJuego() {
-  resetearJuego();
-  return {
+  let juego = {
     nroIntentos: 0,
     ganados: 0,
     perdidos: 0,
+    comentario: "",
+    termino: false,
     probabilidad: "0%",
     PuertaUno,
     PuertaDos,
     PuertaTres,
   };
+  resetearJuego(juego);
+  return juego;
 }
