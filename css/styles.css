@@ -1,7 +1,3 @@
-body{
-    /* background-color: #6c757d; */
-}
-
 .titulo{
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -16,10 +12,6 @@ body{
     /* margin-left: 1rem; */
 }
 
-.row{
-
-}
-
 .card{
     margin-bottom: .5rem;
 }
@@ -30,8 +22,8 @@ body{
     margin: 0;
 }
 
-.datos h3{
-    
+.btn{
+    transition: 0.3s;
 }
 
 .datos p{
